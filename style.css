@@ -1,198 +1,190 @@
+/* Reset default margins and paddings for all elements, and set a default font */
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
+/* Styling the full-screen banner */
 .banner {
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('background_image.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
 }
 
+/* Logo styling */
 .logo {
     margin: 0; /* Remove any default margin */
     padding: 0; /* Remove any default padding */
-    width: 100px; /* Adjust width for oval shape */
-    height: 75px; /* Height is smaller than width to create an oval */
-    border-radius: 50%; /* Creates the oval shape */
-    border: 3px solid #3498db; /* Adjust the border size for the image */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for the image */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-    object-fit: cover; /* Ensures the image fits within the oval */
-    position: fixed; /* Fix the logo to the screen corner */
+    width: 100px; /* Set width to create an oval shape */
+    height: 75px; /* Set height to create an oval shape */
+    border-radius: 50%; /* Make the logo oval-shaped */
+    border: 3px solid #3498db; /* Add a border around the logo */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition effects */
+    object-fit: cover; /* Ensure the image fits within the oval without distortion */
+    position: fixed; /* Fix the logo position to the screen corner */
     top: 25px; /* Align to the top edge */
     left: 25px; /* Align to the left edge */
-    cursor: pointer; /* Adds a pointer cursor on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-
+/* Add hover effects to the logo */
 .logo:hover {
-    transform: scale(1.1); /* Scales and slightly rotates the image on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increases shadow on hover for more depth */
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase the shadow on hover for more depth */
 }
 
+/* Navbar styling */
 .navbar {
     width: 85%;
     margin: auto;
     padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Moves the navbar items to the right */
-    position: absolute;
+    display: flex; /* Flexbox layout for navbar items */
+    align-items: center; /* Vertically align items in the center */
+    justify-content: flex-end; /* Align navbar items to the right */
+    position: absolute; /* Position relative to the banner */
     top: 10px; /* Align with the logo */
     right: 10px; /* Align with the right edge */
 }
 
+/* Navbar list item styling */
 .navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
+    list-style: none; /* Remove default list styling */
+    display: inline-block; /* Display items inline */
+    margin: 0 20px; /* Space out the navbar items */
+    position: relative; /* Allow pseudo-elements positioning */
 }
 
+/* Navbar link styling */
 .navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* White text color */
+    text-transform: uppercase; /* Capitalize the text */
 }
 
+/* Add a bottom border animation effect to navbar items */
 .navbar ul li::after {
-    content: ' ';
-    height: 3px;
-    width: 0;
-    background: #009688;
-    position: absolute;
+    content: ' '; /* Empty content for the underline effect */
+    height: 3px; /* Thickness of the underline */
+    width: 0; /* Start with no underline */
+    background: #009688; /* Color of the underline */
+    position: absolute; /* Position it below the text */
     left: 0;
-    bottom: -10px;
-    transition: 0.5s;
+    bottom: -10px; /* Place it just below the text */
+    transition: 0.5s; /* Smooth transition for the underline */
 }
 
+/* Expand underline on hover */
 .navbar ul li:hover::after {
-    width: 100%;
+    width: 100%; /* Expand the underline to full width */
 }
 
+/* Content section styling */
 .content {
     width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
+    top: 50%; /* Center the content vertically */
+    transform: translateY(-50%); /* Adjust position to the vertical center */
+    text-align: center; /* Center text horizontally */
+    color: #fff; /* White text color */
 }
 
+/* Main heading styling */
 .content h1 {
-    font-size: 70px;
-    margin-top: 80px;
+    font-size: 70px; /* Large font size for the main heading */
+    margin-top: 80px; /* Add some top margin for spacing */
 }
 
+/* Paragraph styling */
 .content p {
-    margin: 20px auto;
-    font-weight: 100%;
-    line-height: 25px;
+    margin: 20px auto; /* Center the paragraph and add vertical spacing */
+    font-weight: 100%; /* Normal font weight */
+    line-height: 25px; /* Line height for readability */
 }
 
+/* Button styling */
 button {
     width: 200px;
-    padding: 15px 0;
+    padding: 15px 0; /* Vertical padding for the button */
     text-align: center;
-    margin: 20px 20px; /* Added more space between the buttons */
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative; /* Changed to relative */
-    overflow: hidden;
+    margin: 20px 20px; /* Add spacing between the buttons */
+    border-radius: 25px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    border: 2px solid #009688; /* Border color matching the navbar underline */
+    background: transparent; /* Transparent background */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* Position the button relative to the span */
+    overflow: hidden; /* Hide overflow to manage the span effect */
 }
 
+/* Span inside button for hover effect */
 span {
-    background: #009688;
+    background: #009688; /* Background color for the span */
     height: 100%;
     width: 100%;
-    border-radius: 25px;
-    position: absolute;
+    border-radius: 25px; /* Match the button's rounded corners */
+    position: absolute; /* Position the span over the button */
     left: 0;
     bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
+    z-index: -1; /* Place the span behind the button text */
+    transition: 0.5s; /* Smooth transition for hover effect */
 }
 
+/* Expand span on button hover */
 button:hover span {
-    width: 100%;
+    width: 100%; /* Expand the span to cover the button */
 }
 
+/* Button styling on hover */
 button:hover {
-    border: none;
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-
+    border: none; /* Remove border on hover */
 }
 
+/* Adjust body background color */
 body {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Light grey background for the body */
 }
 
-.banner {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('background_image.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.logo {
-    margin: 5px;
-    padding: 5px;
-    width: 100px; /* Adjusted width for oval shape */
-    height: 75px; /* Height is smaller than width to create an oval */
-    border-radius: 50%; /* Creates the oval shape */
-    border: 3px solid #3498db; /* Adjust the border size for the image */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for the image */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-    object-fit: cover; /* Ensures the image fits within the oval */
-}
-
-.logo:hover {
-    transform: scale(1.1) rotate(5deg); /* Scales and slightly rotates the image on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increases shadow on hover for more depth */
-}
-
+/* Navbar container display settings */
 .navbar {
-    display: flex;
-
+    display: flex; /* Flexbox layout for navbar */
 }
 
+/* Unordered list styling */
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style-type: none; /* Remove bullets from list */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flexbox layout for list items */
 }
 
+/* List item styling */
 li {
-    float: right;
-    font-size: 10px;
-    color: rgb(228, 205, 205);
-    font-family: Arial, Helvetica, sans-serif;
+    float: right; /* Align list items to the right */
+    font-size: 10px; /* Small font size */
+    color: rgb(228, 205, 205); /* Light color for the text */
+    font-family: Arial, Helvetica, sans-serif; /* Set the font family */
 }
 
+/* Anchor link styling */
 a {
-    display: block;
-    padding: 8px;
-
+    display: block; /* Block-level links for better click area */
+    padding: 8px; /* Padding around the links */
 }
 
+/* Hover effect on list items */
 ul li:hover {
-    color: rgb(48, 119, 54);
-    position: relative;
-    /* Changed from absolute to relative */
-    font-size: 1.5em;
-    /* Changed from 150px to a more reasonable size */
+    color: rgb(48, 119, 54); /* Change text color on hover */
+    position: relative; /* Position the element relative for any pseudo-elements */
+    font-size: 1.5em; /* Increase font size on hover */
+}
+
+/* Sub-heading styling */
+.content h3 {
+    font-size: 39px; /* Font size for sub-headings */
+    font-weight: bold; /* Bold font for emphasis */
 }
